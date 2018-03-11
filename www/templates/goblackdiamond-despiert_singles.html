@@ -1,0 +1,32 @@
+	<ion-view view-title="{{ despiert.title.rendered }}" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title>{{ despiert.title.rendered }}</ion-nav-title>
+		<!-- content -->
+		<ion-content delegate-handle="top"  scroll="true"   id="page-despiert_singles" class="page-despiert_singles">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+
+					<!-- heading-1 -->
+					<div class="item item-divider"  ng-bind-html="despiert.title.rendered | to_trusted">{{despiert.title.rendered}}</div>
+					<!-- ./heading-1 -->
+
+					<!-- to_trusted -->
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="despiert.content.rendered | strHTML"></div>
+					<!-- ./to_trusted -->
+
+					<!-- share_link -->
+					<div class="item">
+						<button run-social-sharing message="{{ despiert.link }}" class="button button-small ion-android-share-alt button-outline button-positive icon-left">COMPARTIR</button>
+					</div>
+					<!-- ./share_link -->
+			</div>
+			<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

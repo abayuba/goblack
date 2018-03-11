@@ -1,0 +1,32 @@
+	<ion-view view-title="{{ tica_y_legal.title.rendered }}" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title>{{ tica_y_legal.title.rendered }}</ion-nav-title>
+		<!-- content -->
+		<ion-content delegate-handle="top"  scroll="true"   id="page-tica_y_legal_singles" class="page-tica_y_legal_singles">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+
+					<!-- heading-1 -->
+					<div class="item item-divider"  ng-bind-html="tica_y_legal.title.rendered | to_trusted">{{tica_y_legal.title.rendered}}</div>
+					<!-- ./heading-1 -->
+
+					<!-- to_trusted -->
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="tica_y_legal.content.rendered | strHTML"></div>
+					<!-- ./to_trusted -->
+
+					<!-- share_link -->
+					<div class="item">
+						<button run-social-sharing message="{{ tica_y_legal.link }}" class="button button-small ion-android-share-alt button-outline button-positive icon-left">COMPARTIR</button>
+					</div>
+					<!-- ./share_link -->
+			</div>
+			<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
