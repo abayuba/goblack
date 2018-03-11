@@ -1,0 +1,14 @@
+{
+  "name": "GoBlackDiamond",
+  "app_id": "08ac9143",
+  "type": "ionic1",
+  "integrations": {
+    "gulp": {}
+  },
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}
